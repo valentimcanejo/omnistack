@@ -7,6 +7,11 @@
    
     
 }
+
+.dialog-screen{
+    padding: 50px;
+}
+
 .input-form-techs{
 
     margin-top: 20px;
@@ -17,13 +22,13 @@
 
 .icon-button{
     display:flex;
-
+    
     flex-direction: row;
 }
 
 .buttons{
     display: flex;
-margin-top: 10px;
+margin-top: 20px;
     gap: 10px;
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./styles.css";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { IconButton, Button } from "@mui/material";
+import { IconButton, Button, TextField, Typography, Box } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -22,7 +22,6 @@ export default function DevItem({ dev, del, update }) {
     e.preventDefault();
     await update({
       github_username: dev.github_username,
-
       bio: bio,
       techs: techs,
     });
@@ -61,33 +60,37 @@ export default function DevItem({ dev, del, update }) {
         Acessar perfil no github
       </a>
 
-      <Dialog open={open}>
+      <Dialog className="dialog-screen" open={open}>
         <DialogTitle>Update</DialogTitle>
         <DialogContent>
-          <DialogContentText>Update the Techs and Bio</DialogContentText>
           <form onSubmit={updateDev}>
             <div className="input-form-techs">
-              <div>
-                <p>Change the dev's techs</p>
-                <input
+              <Box>
+                <Typography variant="body2">Update the dev's techs:</Typography>
+                <TextField
+                  variant="outlined"
+                  size="small"
                   value={techs}
                   id="techs"
                   name="techs"
                   onChange={(e) => setTechs(e.target.value)}
-                ></input>
-              </div>
-              <div>
-                <p>Change the dev's bio</p>
-                <input
+                ></TextField>
+              </Box>
+              <Box>
+                <Typography variant="body2">Update the dev's bio:</Typography>
+                <TextField
                   id="bio"
+                  variant="outlined"
+                  size="small"
                   name="bio"
                   value={bio}
                   onChange={(e) => setBio(e.target.value)}
-                ></input>
-              </div>
+                ></TextField>
+              </Box>
             </div>
             <div className="buttons">
               <Button
+                size="small"
                 onClick={() => document.location.reload(true)}
                 type="submit"
                 variant="contained"
@@ -96,6 +99,7 @@ export default function DevItem({ dev, del, update }) {
                 Update
               </Button>
               <Button
+                size="small"
                 onClick={() => setOpen(false)}
                 color="error"
                 variant="contained"
