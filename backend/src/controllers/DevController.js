@@ -46,8 +46,20 @@ module.exports = {
     return res.json(dev);
   },
   async update(req, res) {
-    const { techs, bio } = req.body;
-    const dev = await Dev.updateOne({ bio: bio, techs: techs });
+    const { github_username, techs, bio } = req.body;
+    let dev = await Dev.findOneAndUpdate(
+      {
+        github_username: github_username,
+      },
+
+      { bio: bio },
+      { techs: techs }
+    );
+    // dev = await Dev.updateOne({
+    //   techs: techs,
+    //   bio: bio,
+    // });
+
     return res.json(dev);
   },
   async delete(req, res) {

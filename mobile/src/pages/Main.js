@@ -61,7 +61,7 @@ export default function Main({ navigation }) {
       params: {
         latitude,
         longitude,
-        techs: "javascript",
+        techs: "React",
       },
     });
     setDevs(res.data.devs);

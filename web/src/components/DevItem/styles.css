@@ -1,4 +1,45 @@
+.bio-icon{
+    
+   
+    display: flex;
+    justify-content: space-between;
 
+   
+    
+}
+.input-form-techs{
+
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.icon-button{
+    display:flex;
+
+    flex-direction: row;
+}
+
+.buttons{
+    display: flex;
+margin-top: 10px;
+    gap: 10px;
+}
+
+.techs-button{
+    width: 100%;
+    border: 0;
+    
+    background: #7d40e7;
+    border-radius: 2px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    cursor:pointer;
+    transition: background 0.5s;
+}
 
 li.dev-item{
     background: #fff;
@@ -30,6 +71,7 @@ li.dev-item header img{
 }
 
 li.dev-item header .user-info{
+    
     margin-left: 10px;
 }
 
