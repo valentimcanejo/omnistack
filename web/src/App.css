@@ -7,21 +7,19 @@
     align-items: flex-start;
 }
 
-#app main{
-    margin-left: 30px;
-}
+
 
 @media (max-width: 1000px){
     #app{
         flex-direction: column;
     }
 
-    #app main{
+    #app .main{
         margin-left: 0;
         margin-top: 30px;
     }
 
-    #app aside{
+    #app .aside{
         width: 100%;
     }
 }
